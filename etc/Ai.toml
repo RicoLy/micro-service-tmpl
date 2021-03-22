@@ -1,0 +1,35 @@
+[server]
+    ServiceName     = "svc.ai"                  # 服务名
+    Evn             = "dev"                     # 环境
+    GrpcAddr        = "127.0.0.1:8881"          # grpc接口地址
+    HttpAddr        = "127.0.0.1:8882"          # http接口地址
+    PrometheusAddr  = "127.0.0.1:9100"          # prometheus服务监控地址
+    JaegerAddr      = "192.168.142.128:6831"    # Jaeger链路追踪地址
+    EtcdAddr        = ["127.0.0.1:2379"]        # etcd地址
+
+[mysql]
+    [mysql.Master]
+        Host    = "192.168.142.128"
+        Port    = "3306"
+        Name    = "root"
+        Pass    = "mysqlly"
+        DBName  = "ai"
+        Charset = "utf8mb4"
+        MaxIdle = 50
+        MaxOpen = 100
+
+    [mysql.Slave]
+        Host    = "192.168.142.128"
+        Port    = "3306"
+        Name    = "root"
+        Pass    = "mysqlly"
+        DBName  = "ai"
+        Charset = "utf8mb4"
+        MaxIdle = 50
+        MaxOpen = 100
+
+[Jwt] # jwt 配置
+    JwtSecret      = "kldall@#@#@$#@￥#@"  #Jwt秘钥
+    SuperAdminId   = 666666                #超级管理员Id
+    SuperAdmin     = "root"                #超级管理员账号
+    SuperAdminPwd  = "root"                #超级管理员密码

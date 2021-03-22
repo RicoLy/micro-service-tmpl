@@ -1,0 +1,68 @@
+syntax = "proto3";
+package pb;
+
+// ---------------------- Service ----------------------------
+service Ai {
+  rpc ShowAiDistort(ShowReq) returns (ShowAiDistortRsp) {}
+  rpc AddAiDistort(AddAiDistortReq) returns (Ack) {}
+  rpc DeleteAiDistort(DeleteAiDistortReq) returns (Ack) {}
+}
+
+// ----------------------- Request ---------------------------
+
+// 获取Ai 误报/漏报 配置请求
+message ShowReq {
+  uint64 Appid = 1;
+  string Where = 2;
+  string OrderBy = 3;
+  int64 Page = 4;
+  int64 PageSize = 5;
+}
+
+
+// 添加Ai误报信息
+message AddAiDistortReq {
+  uint64 Appid = 1;
+  string Domain = 2;
+  string Payload = 3;
+  string From = 4;
+  string Remark = 5;
+}
+
+//// 删除Ai误报信息
+message DeleteAiDistortReq {
+  uint64 Uin = 1;
+}
+
+// ----------------------------- Response ----------------------------
+
+// 成功与否
+message Ack {
+  bool IsOk = 1;
+}
+
+// 页码结构体
+message PaginationRsp {
+  int64 Page = 1;
+  int64 PageSize = 2;
+  int64 Total = 3;
+  int64 TotalPage = 4;
+}
+
+//Ai误报信息
+message AiDistortRsp {
+  uint64 Uin = 1;
+  uint64 Appid = 2;
+  string Domain = 3;
+  string Payload = 4;
+  string From = 5;
+  string Remark = 6;
+  uint32 Status = 7;
+  int64 CreatedAt = 8;
+}
+
+//获取Ai误报信息响应
+message ShowAiDistortRsp {
+  repeated AiDistortRsp AiDistorts = 1;
+  PaginationRsp  Pagination = 2;
+}
