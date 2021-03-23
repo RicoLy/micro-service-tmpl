@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4efe2fc4-f41c-4d5d-b81c-5f5d50597554" name="Default Changelist" comment="实现server端代码">
+      <change afterPath="$PROJECT_DIR$/.idea/micro-service-tmpl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ai_agent_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/ai_agent_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/Ai-debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/Ai-info.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logs/Ai-warn.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/domain/req/addAiDistortVO.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/domain/req/deleteAiDistortVO.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/domain/req/showVO.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/domain/res/ack.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/domain/res/ai_distort.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/transport/request_encoder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/transport/response_encoder.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/AI/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/AI/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/Ai.toml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/Ai.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/transport/response_encoder.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/transport/response_encoder.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/hystrix/hystrix.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/myhystrix/hystrix.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="D:\go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1py81rKA9bPnH6V6YGN86g4823A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myProject\micro-service-tmpl\client" />
+      <recent name="D:\myProject\micro-service-tmpl\client\domain" />
+      <recent name="D:\myProject\micro-service-tmpl\client\domain\req" />
+      <recent name="D:\myProject\micro-service-tmpl\client\domain\res" />
+      <recent name="D:\myProject\micro-service-tmpl\internal\AI\endpoint" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.TestNewAiAgentClient in micro-service-tmpl/client2">
+    <configuration name="go build micro-service-tmpl/cmd/AI" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="micro-service-tmpl" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/AI/main.go" />
+      <package value="micro-service-tmpl/cmd/AI" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGrpc in micro-service-tmpl/client" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="micro-service-tmpl" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="micro-service-tmpl/client" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestGrpc\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="micro-service-tmpl" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="micro-service-tmpl/client" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestNewAiAgentClient\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client1" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="micro-service-tmpl" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="micro-service-tmpl/client" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestNewAiAgentClient\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="micro-service-tmpl" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="micro-service-tmpl/client" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestNewAiAgentClient\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client2" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+      <module name="micro-service-tmpl" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="micro-service-tmpl/client" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestNewAiAgentClient\E$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build micro-service-tmpl/cmd/AI" />
+      <item itemvalue="Go Test.TestGrpc in micro-service-tmpl/client" />
+      <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client1" />
+      <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client2" />
+        <item itemvalue="Go Test.TestGrpc in micro-service-tmpl/client" />
+        <item itemvalue="Go Build.go build micro-service-tmpl/cmd/AI" />
+        <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client1" />
+        <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="实现server端代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现server端代码" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="254" y="85" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616490319578">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="254" y="85" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1616490319578" />
+    <state width="1557" height="218" key="GridCell.Tab.0.bottom" timestamp="1616490376953">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="218" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
+    <state width="1557" height="218" key="GridCell.Tab.0.center" timestamp="1616490376953">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="218" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
+    <state width="1557" height="218" key="GridCell.Tab.0.left" timestamp="1616490376953">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="218" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
+    <state width="1557" height="218" key="GridCell.Tab.0.right" timestamp="1616490376953">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="218" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1616407543754">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1616407543754" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1616407543754">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1616407543754" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1616407543754">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1616407543754" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1616407543754">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1616407543754" />
+    <state x="301" y="74" key="SettingsEditor" timestamp="1616146522465">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="301" y="74" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1616146522465" />
+    <state x="114" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1616380303821">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="114" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1616380303821" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/client/agent_test.go</url>
+          <line>41</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

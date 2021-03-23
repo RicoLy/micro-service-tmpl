@@ -1,5 +1,5 @@
 [server]
-    ServiceName     = "svc.ai"                  # 服务名
+    ServiceName     = "svc.Ai"                  # 服务名
     Evn             = "dev"                     # 环境
     GrpcAddr        = "127.0.0.1:8881"          # grpc接口地址
     HttpAddr        = "127.0.0.1:8882"          # http接口地址

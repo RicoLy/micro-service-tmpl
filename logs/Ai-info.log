@@ -1,0 +1,93 @@
+{"level":"info","ts":1616380974557,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616381034445,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616381064164,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616381414566,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616381414947,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616381414947,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616381414966,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616382648620,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616382649396,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616382649397,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616382649402,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616383316463,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616383316920,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616383316920,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616383316923,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616383443626,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616383444070,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616383444070,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616383444072,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616383868619,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616383869077,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616383869076,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616383869083,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616384317755,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616384318153,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616384318154,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616384318159,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616406203983,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616406204399,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616406204400,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616406204403,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616406467607,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616406770813,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616406912194,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616406932316,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616407052304,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616407052683,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616407052684,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616407052688,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616407116981,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616407161574,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616407434563,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488094998,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488159635,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488407220,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488407689,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616488407689,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616488407708,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616488421378,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488461895,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488512745,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488684639,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488957103,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616488957495,"caller":"Ai/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616488957497,"caller":"Ai/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616489106696,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489107102,"caller":"Ai/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616489107103,"caller":"Ai/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:10002"}
+{"level":"info","ts":1616489153856,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489154210,"caller":"Ai/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:10003"}
+{"level":"info","ts":1616489154211,"caller":"Ai/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:10002"}
+{"level":"info","ts":1616489154215,"caller":"Ai/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:10001"}
+{"level":"info","ts":1616489174421,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489222695,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489249644,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489259159,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489282718,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489506128,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489524389,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489524757,"caller":"Ai/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:10003"}
+{"level":"info","ts":1616489524757,"caller":"Ai/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:10002"}
+{"level":"info","ts":1616489524760,"caller":"Ai/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:10001"}
+{"level":"info","ts":1616489578537,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489578908,"caller":"Ai/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:80003"}
+{"level":"info","ts":1616489578908,"caller":"Ai/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:80002"}
+{"level":"info","ts":1616489626852,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489627219,"caller":"Ai/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:70003"}
+{"level":"info","ts":1616489627219,"caller":"Ai/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:70002"}
+{"level":"info","ts":1616489666976,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489667332,"caller":"Ai/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:30003"}
+{"level":"info","ts":1616489667332,"caller":"Ai/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:30002"}
+{"level":"info","ts":1616489667337,"caller":"Ai/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:30001"}
+{"level":"info","ts":1616489689407,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489712912,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489826432,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489847121,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489869293,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489965399,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616489965823,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616489965823,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616489965825,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616490269318,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616490327063,"caller":"log/log.go:105","msg":"[NewLogger] success"}

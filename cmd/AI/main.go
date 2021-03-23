@@ -45,7 +45,7 @@ type ServerConfig struct {
 var quitChan = make(chan error, 1)
 
 func main() {
-
+	//go run ./cmd/Ai/main.go -g 127.0.0.1:30001 -h 127.0.0.1:30002 -p 127.0.0.1:30003
 	// 日志
 	logger := log.GetLogger()
 

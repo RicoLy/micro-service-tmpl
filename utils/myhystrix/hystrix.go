@@ -1,4 +1,4 @@
-package hystrix
+package myhystrix
 
 import (
 	"fmt"
