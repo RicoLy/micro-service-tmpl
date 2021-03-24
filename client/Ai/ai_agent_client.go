@@ -1,7 +1,6 @@
-package client
+package Ai
 
 import (
-
 	"context"
 	"fmt"
 	"github.com/go-kit/kit/endpoint"
@@ -10,27 +9,35 @@ import (
 	"github.com/go-kit/kit/sd/etcdv3"
 	"github.com/go-kit/kit/sd/lb"
 	grpctransport "github.com/go-kit/kit/transport/grpc"
-	"micro-service-tmpl/internal/AI/domain/global"
-	"micro-service-tmpl/internal/AI/domain/pb"
-	"micro-service-tmpl/internal/AI/domain/req"
-	"micro-service-tmpl/internal/AI/domain/res"
-	endpoint2 "micro-service-tmpl/internal/AI/endpoint"
+	grpcmiddleware "github.com/grpc-ecosystem/go-grpc-middleware"
+	grpc_zap "github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
+	grpc_opentracing "github.com/grpc-ecosystem/go-grpc-middleware/tracing/opentracing"
+	"github.com/opentracing/opentracing-go"
 	uuid "github.com/satori/go.uuid"
+	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
 	"io"
-	"micro-service-tmpl/internal/AI/service"
-	"time"
+	"micro-service-tmpl/client/domain/global"
+	"micro-service-tmpl/client/domain/pb"
+	"micro-service-tmpl/client/domain/req"
+	"micro-service-tmpl/client/domain/res"
+	"micro-service-tmpl/client/domain/vo"
+	endpoint2 "micro-service-tmpl/client/endpoint"
+	"micro-service-tmpl/client/service"
+	"micro-service-tmpl/utils/jaegerTracer"
+	"micro-service-tmpl/utils/myLog"
 
-	"google.golang.org/grpc"
+	"time"
 )
 
 // AiRpc客户端
 type AiAgent struct {
 	instance *etcdv3.Instancer
 	logger   log.Logger
+	tracer   opentracing.Tracer
 }
 
-func NewAiAgentClient(addr []string, logger log.Logger) (*AiAgent, error) {
+func NewAiAgentClient(addr []string, logger log.Logger, jaegerAddr string) (*AiAgent, error) {
 	var (
 		sEtcdAddr = addr
 		serName   = "svc.Ai"
@@ -38,7 +45,11 @@ func NewAiAgentClient(addr []string, logger log.Logger) (*AiAgent, error) {
 	)
 	options := etcdv3.ClientOptions{
 		DialKeepAlive: ttl,
-		DialTimeout: ttl,
+		DialTimeout:   ttl,
+	}
+	tracer, _, err := jaegerTracer.NewJaegerTracer("user_agent_client", jaegerAddr)
+	if err != nil {
+		return nil, err
 	}
 	etcdClient, err := etcdv3.NewClient(context.Background(), sEtcdAddr, options)
 	if err != nil {
@@ -51,12 +62,13 @@ func NewAiAgentClient(addr []string, logger log.Logger) (*AiAgent, error) {
 	return &AiAgent{
 		instance: instance,
 		logger:   logger,
+		tracer:   tracer,
 	}, err
 }
 
 func (a *AiAgent) AiAgentClient() (service.AIService, error) {
 	var (
-		retryMax = 3
+		retryMax     = 3
 		retryTimeout = 5 * time.Second
 
 		endpoints endpoint2.AiEndpoints
@@ -64,24 +76,24 @@ func (a *AiAgent) AiAgentClient() (service.AIService, error) {
 
 	{
 		factory := a.factoryFor(endpoint2.MakeShowAiDistortEndPoint)
-		showAiDistortDefaultEndPoint := sd.NewEndpointer(a.instance, factory, a.logger)
-		balancer := lb.NewRoundRobin(showAiDistortDefaultEndPoint)
+		defaultEndPoint := sd.NewEndpointer(a.instance, factory, a.logger)
+		balancer := lb.NewRoundRobin(defaultEndPoint)
 		showAiDistortEndPoint := lb.Retry(retryMax, retryTimeout, balancer)
 		endpoints.ShowAiDistortEndpoint = showAiDistortEndPoint
 	}
 
 	{
 		factory := a.factoryFor(endpoint2.MakeAddAiDistortEndPoint)
-		addAiDistortDefaultEndPoint := sd.NewEndpointer(a.instance, factory, a.logger)
-		balancer := lb.NewRoundRobin(addAiDistortDefaultEndPoint)
+		defaultEndPoint := sd.NewEndpointer(a.instance, factory, a.logger)
+		balancer := lb.NewRoundRobin(defaultEndPoint)
 		addAiDistortEndPoint := lb.Retry(retryMax, retryTimeout, balancer)
 		endpoints.AddAiDistortEndpoint = addAiDistortEndPoint
 	}
 
 	{
 		factory := a.factoryFor(endpoint2.MakeDeleteAiDistortEndPoint)
-		deleteAiDistortDefaultEndPoint := sd.NewEndpointer(a.instance, factory, a.logger)
-		balancer := lb.NewRoundRobin(deleteAiDistortDefaultEndPoint)
+		defaultEndPoint := sd.NewEndpointer(a.instance, factory, a.logger)
+		balancer := lb.NewRoundRobin(defaultEndPoint)
 		deleteAiDistortEndPoint := lb.Retry(retryMax, retryTimeout, balancer)
 		endpoints.DeleteAiDistortEndpoint = deleteAiDistortEndPoint
 	}
@@ -91,8 +103,17 @@ func (a *AiAgent) AiAgentClient() (service.AIService, error) {
 
 func (a *AiAgent) factoryFor(makeEndpoint func(service service.AIService) endpoint.Endpoint) sd.Factory {
 	return func(instance string) (endpoint.Endpoint, io.Closer, error) {
-		fmt.Println("instance >>>>>>>>>>>>>>>>   ",instance)
-		conn, err := grpc.Dial(instance, grpc.WithInsecure())
+		fmt.Println("instance >>>>>>>>>>>>>>>>   ", instance)
+		chainUnaryServer := grpcmiddleware.ChainUnaryClient(
+			grpc_opentracing.UnaryClientInterceptor(grpc_opentracing.WithTracer(a.tracer)),
+			grpc_zap.UnaryClientInterceptor(myLog.GetLogger()),
+			jaegerTracer.JaegerClientMiddleware(a.tracer),
+		)
+		conn, err := grpc.Dial(
+			instance,
+			grpc.WithInsecure(),
+			grpc.WithUnaryInterceptor(chainUnaryServer),
+		)
 		if err != nil {
 			return nil, nil, err
 		}
@@ -160,7 +181,7 @@ func (a *AiAgent) NewGRPCClient(conn *grpc.ClientConn) service.AIService {
 }
 
 // ---------------------- ShowAiDistort --------------------
-// 请求参数转换为 pb参数
+// 请求参数转换为 vo -> pb
 func (a *AiAgent) RequestShowAiDistort(_ context.Context, request interface{}) (interface{}, error) {
 	rq := request.(*req.ShowVO)
 	return &pb.ShowReq{
@@ -172,28 +193,28 @@ func (a *AiAgent) RequestShowAiDistort(_ context.Context, request interface{}) (
 	}, nil
 }
 
-// 请求响应转换为 pb响应
+// 请求响应转换 pb -> vo
 func (a *AiAgent) ResponseShowAiDistort(_ context.Context, response interface{}) (interface{}, error) {
-	resp := response.(*res.ShowAiDistortRsp)
-	var pbAiDistorts = make([]*pb.AiDistortRsp, 0)
+	resp := response.(*pb.ShowAiDistortRsp)
+	var pbAiDistorts = make([]*vo.AiDistort, 0)
 
 	if len(resp.AiDistorts) > 0 {
 		for _, aiDistort := range resp.AiDistorts {
-			pbAiDistorts = append(pbAiDistorts, &pb.AiDistortRsp{
+			pbAiDistorts = append(pbAiDistorts, &vo.AiDistort{
 				Uin:       aiDistort.Uin,
 				Appid:     aiDistort.Appid,
 				Domain:    aiDistort.Domain,
 				Payload:   aiDistort.Payload,
 				From:      aiDistort.From,
 				Remark:    aiDistort.Remark,
-				Status:    uint32(aiDistort.Status),
+				Status:    uint8(aiDistort.Status),
 				CreatedAt: aiDistort.CreatedAt,
 			})
 		}
 	}
-	return &pb.ShowAiDistortRsp{
+	return &res.ShowAiDistortRsp{
 		AiDistorts: pbAiDistorts,
-		Pagination: &pb.PaginationRsp{
+		Pagination: vo.Pagination{
 			Page:      resp.Pagination.Page,
 			PageSize:  resp.Pagination.PageSize,
 			Total:     resp.Pagination.Total,
@@ -203,7 +224,7 @@ func (a *AiAgent) ResponseShowAiDistort(_ context.Context, response interface{})
 }
 
 // ---------------------- AddAiDistort -----------------------
-// 请求参数转换为 pb参数
+// 请求参数转换 vo -> pb
 func (a *AiAgent) RequestAddAiDistort(_ context.Context, request interface{}) (interface{}, error) {
 	rq := request.(*req.AddAiDistortVO)
 	return &pb.AddAiDistortReq{
@@ -225,7 +246,7 @@ func (a *AiAgent) ResponseAddAiDistort(_ context.Context, response interface{}) 
 }
 
 // ---------------------- DeleteAiDistort -----------------------
-// 请求参数转换为 pb参数
+// 请求参数转换 vo -> pb
 func (a *AiAgent) RequestDeleteAiDistort(_ context.Context, request interface{}) (interface{}, error) {
 	rq := request.(*req.DeleteAiDistortVO)
 	return &pb.DeleteAiDistortReq{
@@ -233,7 +254,7 @@ func (a *AiAgent) RequestDeleteAiDistort(_ context.Context, request interface{})
 	}, nil
 }
 
-// 请求响应转换为 pb响应
+// 请求响应转换  pb -> vo
 func (a *AiAgent) ResponseDeleteAiDistort(_ context.Context, response interface{}) (interface{}, error) {
 	resp := response.(*res.Ack)
 

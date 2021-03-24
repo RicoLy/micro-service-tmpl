@@ -5,10 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"go.uber.org/zap"
-	"micro-service-tmpl/internal/AI/dao"
-	"micro-service-tmpl/internal/AI/domain/global"
-	"micro-service-tmpl/internal/AI/domain/pb"
-	"micro-service-tmpl/internal/AI/domain/vo"
+	"micro-service-tmpl/client/domain/global"
+	"micro-service-tmpl/client/domain/pb"
+	"micro-service-tmpl/client/domain/vo"
 	"micro-service-tmpl/utils/myLog"
 	"net/http"
 )
@@ -54,27 +53,4 @@ func (*ShowAiDistortRsp) GRPCResponseEncode(ctx context.Context, resVo interface
 			TotalPage: resp.Pagination.TotalPage,
 		},
 	}, nil
-}
-
-// BuildAiDistort Ai误报信息
-func BuildAiDistort(item dao.AiDistort) vo.AiDistort {
-	return vo.AiDistort{
-		Uin:       item.Uin,
-		Appid:     item.Appid,
-		Domain:    item.Domain,
-		Payload:   item.Payload,
-		From:      item.From,
-		Remark:    item.Remark,
-		Status:    item.Status,
-		CreatedAt: item.CreatedAt.Unix(),
-	}
-}
-
-// BuildCarousels Ai误报信息列表
-func BuildDistorts(items []dao.AiDistort) (distorts []*vo.AiDistort) {
-	for _, item := range items {
-		distort := BuildAiDistort(item)
-		distorts = append(distorts, &distort)
-	}
-	return distorts
 }

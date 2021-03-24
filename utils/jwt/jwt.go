@@ -2,7 +2,7 @@ package jwt
 
 import (
 	"github.com/dgrijalva/jwt-go"
-	"micro-service-tmpl/utils/log"
+	"micro-service-tmpl/utils/myLog"
 	"micro-service-tmpl/utils/viper"
 	"time"
 )
@@ -18,7 +18,7 @@ var jwtConf Configs
 
 func init() {
 	if err := viper.ViperConf.UnmarshalKey("Jwt", &jwtConf); err != nil {
-		log.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
+		myLog.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
 	}
 }
 

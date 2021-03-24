@@ -8,6 +8,9 @@ import (
 	metricsprometheus "github.com/go-kit/kit/metrics/prometheus"
 	"github.com/go-kit/kit/sd/etcdv3"
 	grpctransport "github.com/go-kit/kit/transport/grpc"
+	grpcmiddleware "github.com/grpc-ecosystem/go-grpc-middleware"
+	grpc_zap "github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
+	grpc_opentracing "github.com/grpc-ecosystem/go-grpc-middleware/tracing/opentracing"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"go.uber.org/zap"
@@ -20,7 +23,7 @@ import (
 	"micro-service-tmpl/internal/AI/service"
 	"micro-service-tmpl/internal/AI/transport"
 	"micro-service-tmpl/utils/jaegerTracer"
-	"micro-service-tmpl/utils/log"
+	"micro-service-tmpl/utils/myLog"
 	"micro-service-tmpl/utils/viper"
 	"net"
 	"net/http"
@@ -47,7 +50,7 @@ var quitChan = make(chan error, 1)
 func main() {
 	//go run ./cmd/Ai/main.go -g 127.0.0.1:30001 -h 127.0.0.1:30002 -p 127.0.0.1:30003
 	// 日志
-	logger := log.GetLogger()
+	logger := myLog.GetLogger()
 
 	var (
 		ttl        = 5 * time.Second
@@ -57,7 +60,7 @@ func main() {
 	)
 	// 获取server配置
 	if err = viper.ViperConf.UnmarshalKey("server", &serverConf); err != nil {
-		log.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
+		myLog.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
 	}
 	var (
 		// grpc 监听地址
@@ -84,7 +87,7 @@ func main() {
 	}
 
 	// 服务注册
-	Register := etcdv3.NewRegistrar(etcdClient, etcdv3.Service{
+	etcdRegister := etcdv3.NewRegistrar(etcdClient, etcdv3.Service{
 		Key:   fmt.Sprintf("%s/%d", serverConf.ServiceName, crc32.ChecksumIEEE([]byte(*grpcAddr))),
 		Value: *grpcAddr,
 	}, log2.NewNopLogger())
@@ -130,10 +133,17 @@ func main() {
 			quitChan <- err
 			return
 		}
-		//服务注册
-		Register.Register()
-		baseServer := grpc.NewServer(grpc.UnaryInterceptor(grpctransport.Interceptor))
+
+		chainUnaryServer := grpcmiddleware.ChainUnaryServer(
+			grpctransport.Interceptor,
+			grpc_opentracing.UnaryServerInterceptor(grpc_opentracing.WithTracer(tracer)),
+			grpc_zap.UnaryServerInterceptor(myLog.GetLogger()),
+			jaegerTracer.JaegerServerMiddleware(tracer),
+		)
+		baseServer := grpc.NewServer(grpc.UnaryInterceptor(chainUnaryServer))
 		pb.RegisterAiServer(baseServer, grpcServer)
+		//服务注册
+		etcdRegister.Register()
 		logger.Info("[Ai_Server] grpc run " + *grpcAddr)
 		quitChan <- baseServer.Serve(grpcListener)
 	}()

@@ -10,7 +10,7 @@ import (
 	"micro-service-tmpl/internal/AI/domain/req"
 	"micro-service-tmpl/internal/AI/domain/res"
 	"micro-service-tmpl/internal/AI/endpoint"
-	"micro-service-tmpl/utils/log"
+	"micro-service-tmpl/utils/myLog"
 )
 
 //实现protobuf中定义的接口
@@ -54,7 +54,7 @@ func NewGRPCServer(endpoints endpoint.AiEndpoints, log *zap.Logger) pb.AiServer 
 func (s *grpcServer) ShowAiDistort(ctx context.Context, req *pb.ShowReq) (*pb.ShowAiDistortRsp, error) {
 	_, rep, err := s.showAiDistort.ServeGRPC(ctx, req)
 	if err != nil {
-		log.GetLogger().Warn("s.ShowAiDistort.ServeGRPC", zap.Error(err))
+		myLog.GetLogger().Warn("s.ShowAiDistort.ServeGRPC", zap.Error(err))
 		return nil, err
 	}
 	return rep.(*pb.ShowAiDistortRsp), nil
@@ -63,7 +63,7 @@ func (s *grpcServer) ShowAiDistort(ctx context.Context, req *pb.ShowReq) (*pb.Sh
 func (s *grpcServer) AddAiDistort(ctx context.Context, req *pb.AddAiDistortReq) (*pb.Ack, error) {
 	_, rep, err := s.addAiDistort.ServeGRPC(ctx, req)
 	if err != nil {
-		log.GetLogger().Warn("s.AddAiDistort.ServeGRPC", zap.Error(err))
+		myLog.GetLogger().Warn("s.AddAiDistort.ServeGRPC", zap.Error(err))
 		return nil, err
 	}
 	return rep.(*pb.Ack), nil
@@ -72,7 +72,7 @@ func (s *grpcServer) AddAiDistort(ctx context.Context, req *pb.AddAiDistortReq) 
 func (s *grpcServer) DeleteAiDistort(ctx context.Context, req *pb.DeleteAiDistortReq) (*pb.Ack, error) {
 	_, rep, err := s.deleteAiDistort.ServeGRPC(ctx, req)
 	if err != nil {
-		log.GetLogger().Warn("s.DeleteAiDistort.ServeGRPC", zap.Error(err))
+		myLog.GetLogger().Warn("s.DeleteAiDistort.ServeGRPC", zap.Error(err))
 		return nil, err
 	}
 	return rep.(*pb.Ack), nil

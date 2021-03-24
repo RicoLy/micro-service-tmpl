@@ -1,4 +1,4 @@
-package client
+package Ai
 
 import (
 	"context"
@@ -7,9 +7,9 @@ import (
 	uuid "github.com/satori/go.uuid"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/metadata"
-	"micro-service-tmpl/internal/AI/domain/global"
-	"micro-service-tmpl/internal/AI/domain/pb"
-	"micro-service-tmpl/internal/AI/domain/req"
+	"micro-service-tmpl/client/domain/global"
+	"micro-service-tmpl/client/domain/pb"
+	"micro-service-tmpl/client/domain/req"
 	"os"
 	"testing"
 )
@@ -21,7 +21,7 @@ func TestNewAiAgentClient(t *testing.T) {
 		logger = log.With(logger, "ts", log.DefaultTimestampUTC)
 		logger = log.With(logger, "caller", log.DefaultCaller)
 	}
-	client, err := NewAiAgentClient([]string{"127.0.0.1:2379"}, logger)
+	client, err := NewAiAgentClient([]string{"127.0.0.1:2379"}, logger, "127.0.0.1:6831")
 	if err != nil {
 		t.Error(err)
 		return

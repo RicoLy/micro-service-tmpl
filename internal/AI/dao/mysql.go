@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"micro-service-tmpl/utils/log"
+	"micro-service-tmpl/utils/myLog"
 	"micro-service-tmpl/utils/viper"
 )
 
@@ -21,20 +21,20 @@ func init() {
 	)
 
 	if err = viper.ViperConf.UnmarshalKey("mysql.Master", &masterCfg); err != nil {
-		log.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
+		myLog.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
 	}
 
 	if err = viper.ViperConf.UnmarshalKey("mysql.Slave", &slaveCfg); err != nil {
-		log.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
+		myLog.GetLogger().Fatal("数据库获取配置文件失败" + err.Error())
 	}
 
 	// 主
 	if MasterDB, err = InitMysql(masterCfg); err != nil {
-		log.GetLogger().Fatal("数据库连接失败" + err.Error())
+		myLog.GetLogger().Fatal("数据库连接失败" + err.Error())
 	}
 	// 从
 	if SlaveDB, err = InitMysql(slaveCfg); err != nil {
-		log.GetLogger().Fatal("数据库连接失败" + err.Error())
+		myLog.GetLogger().Fatal("数据库连接失败" + err.Error())
 	}
 }
 

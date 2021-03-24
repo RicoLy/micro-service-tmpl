@@ -91,3 +91,20 @@
 {"level":"info","ts":1616489965825,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
 {"level":"info","ts":1616490269318,"caller":"log/log.go:105","msg":"[NewLogger] success"}
 {"level":"info","ts":1616490327063,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616492704672,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616492705167,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616492705168,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616492705172,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616494566689,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616494567093,"caller":"AI/main.go:143","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616494567093,"caller":"AI/main.go:120","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616494567096,"caller":"AI/main.go:137","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616555406395,"caller":"log/log.go:105","msg":"[NewLogger] success"}
+{"level":"info","ts":1616555407149,"caller":"AI/main.go:153","msg":"[Ai_Server] prometheus run 127.0.0.1:9100"}
+{"level":"info","ts":1616555407150,"caller":"AI/main.go:123","msg":"[Ai_Server] http run 127.0.0.1:8882"}
+{"level":"info","ts":1616555407169,"caller":"AI/main.go:147","msg":"[Ai_Server] grpc run 127.0.0.1:8881"}
+{"level":"info","ts":1616555509596,"caller":"zap/server_interceptors.go:40","msg":"finished unary call with code OK","grpc.start_time":"2021-03-24T11:11:49+08:00","grpc.request.deadline":"2021-03-24T11:11:54+08:00","system":"grpc","span.kind":"server","grpc.service":"pb.Ai","grpc.method":"AddAiDistort","grpc.code":"OK","grpc.time_ms":53.97100067138672}
+{"level":"info","ts":1616555509616,"caller":"zap/server_interceptors.go:40","msg":"finished unary call with code OK","grpc.start_time":"2021-03-24T11:11:49+08:00","grpc.request.deadline":"2021-03-24T11:11:54+08:00","system":"grpc","span.kind":"server","grpc.service":"pb.Ai","grpc.method":"AddAiDistort","grpc.code":"OK","grpc.time_ms":5.999000072479248}
+{"level":"info","ts":1616555509630,"caller":"zap/server_interceptors.go:40","msg":"finished unary call with code OK","grpc.start_time":"2021-03-24T11:11:49+08:00","grpc.request.deadline":"2021-03-24T11:11:54+08:00","system":"grpc","span.kind":"server","grpc.service":"pb.Ai","grpc.method":"AddAiDistort","grpc.code":"OK","grpc.time_ms":5.000999927520752}
+{"level":"info","ts":1616555509641,"caller":"zap/server_interceptors.go:40","msg":"finished unary call with code OK","grpc.start_time":"2021-03-24T11:11:49+08:00","grpc.request.deadline":"2021-03-24T11:11:54+08:00","system":"grpc","span.kind":"server","grpc.service":"pb.Ai","grpc.method":"AddAiDistort","grpc.code":"OK","grpc.time_ms":6.510000228881836}
+{"level":"info","ts":1616555509653,"caller":"zap/server_interceptors.go:40","msg":"finished unary call with code OK","grpc.start_time":"2021-03-24T11:11:49+08:00","grpc.request.deadline":"2021-03-24T11:11:54+08:00","system":"grpc","span.kind":"server","grpc.service":"pb.Ai","grpc.method":"AddAiDistort","grpc.code":"OK","grpc.time_ms":4.998000144958496}

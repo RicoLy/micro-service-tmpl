@@ -20,29 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4efe2fc4-f41c-4d5d-b81c-5f5d50597554" name="Default Changelist" comment="实现server端代码">
-      <change afterPath="$PROJECT_DIR$/.idea/micro-service-tmpl.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/ai_agent_client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/ai_agent_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/Ai-debug.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/Ai-info.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/Ai-warn.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/domain/req/addAiDistortVO.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/domain/req/deleteAiDistortVO.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/domain/req/showVO.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/domain/res/ack.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/domain/res/ai_distort.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/transport/request_encoder.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/transport/response_encoder.go" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/erro/err.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/global/const.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/pb/ai_service.pb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/pb/ai_service.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/req/addAiDistortVO.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/req/deleteAiDistortVO.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/req/showVO.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/req/validator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/res/ack.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/res/ai_distort.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/domain/vo/vo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/endpoint/ai_endpoint.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/service/ai_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ai_agent_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/Ai/ai_agent_client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/ai_agent_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/client/Ai/ai_agent_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/AI/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/AI/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/Ai.toml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/Ai.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/AI/transport/response_encoder.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/transport/response_encoder.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/hystrix/hystrix.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/myhystrix/hystrix.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/dao/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/dao/mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/domain/req/addAiDistortVO.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/domain/req/addAiDistortVO.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/domain/req/deleteAiDistortVO.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/domain/req/deleteAiDistortVO.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/domain/req/showVO.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/domain/req/showVO.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/domain/res/ack.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/domain/res/ack.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/domain/res/ai_distort.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/domain/res/ai_distort.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/AI/transport/grpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/AI/transport/grpc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/Ai-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/Ai-debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/Ai-info.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/Ai-info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/jwt/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/jwt/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/myLog/log.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +76,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -82,14 +87,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\myProject\micro-service-tmpl" />
       <recent name="D:\myProject\micro-service-tmpl\client" />
       <recent name="D:\myProject\micro-service-tmpl\client\domain" />
       <recent name="D:\myProject\micro-service-tmpl\client\domain\req" />
       <recent name="D:\myProject\micro-service-tmpl\client\domain\res" />
-      <recent name="D:\myProject\micro-service-tmpl\internal\AI\endpoint" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestNewAiAgentClient in micro-service-tmpl/client2">
+  <component name="RunManager" selected="Go Build.go build micro-service-tmpl/cmd/AI">
     <configuration name="go build micro-service-tmpl/cmd/AI" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="micro-service-tmpl" />
       <working_directory value="$PROJECT_DIR$" />
@@ -132,7 +137,7 @@
       <pattern value="^\QTestNewAiAgentClient\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client2" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
       <module name="micro-service-tmpl" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -143,7 +148,7 @@
       <pattern value="^\QTestNewAiAgentClient\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client2" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true">
+    <configuration name="TestNewAiAgentClient in micro-service-tmpl/client" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="micro-service-tmpl" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -156,15 +161,16 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build micro-service-tmpl/cmd/AI" />
+      <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client" />
       <item itemvalue="Go Test.TestGrpc in micro-service-tmpl/client" />
       <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client1" />
       <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build micro-service-tmpl/cmd/AI" />
         <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client2" />
         <item itemvalue="Go Test.TestGrpc in micro-service-tmpl/client" />
-        <item itemvalue="Go Build.go build micro-service-tmpl/cmd/AI" />
         <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client1" />
         <item itemvalue="Go Test.TestNewAiAgentClient in micro-service-tmpl/client" />
       </list>
@@ -198,22 +204,22 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="85" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1616490319578" />
-    <state width="1557" height="218" key="GridCell.Tab.0.bottom" timestamp="1616490376953">
+    <state width="1557" height="215" key="GridCell.Tab.0.bottom" timestamp="1616556246969">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="218" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
-    <state width="1557" height="218" key="GridCell.Tab.0.center" timestamp="1616490376953">
+    <state width="1557" height="215" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1616556246969" />
+    <state width="1557" height="215" key="GridCell.Tab.0.center" timestamp="1616556246969">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="218" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
-    <state width="1557" height="218" key="GridCell.Tab.0.left" timestamp="1616490376953">
+    <state width="1557" height="215" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1616556246969" />
+    <state width="1557" height="215" key="GridCell.Tab.0.left" timestamp="1616556246965">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="218" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
-    <state width="1557" height="218" key="GridCell.Tab.0.right" timestamp="1616490376953">
+    <state width="1557" height="215" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1616556246965" />
+    <state width="1557" height="215" key="GridCell.Tab.0.right" timestamp="1616556246969">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1557" height="218" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1616490376953" />
+    <state width="1557" height="215" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1616556246969" />
     <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1616407543754">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

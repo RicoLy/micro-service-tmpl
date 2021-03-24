@@ -1,4 +1,4 @@
-package log
+package myLog
 
 import (
 	"github.com/natefinch/lumberjack"

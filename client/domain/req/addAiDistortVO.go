@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"go.uber.org/zap"
-	"micro-service-tmpl/internal/AI/domain/erro"
-	"micro-service-tmpl/internal/AI/domain/global"
-	"micro-service-tmpl/internal/AI/domain/pb"
+	"micro-service-tmpl/client/domain/erro"
+	"micro-service-tmpl/client/domain/global"
+	"micro-service-tmpl/client/domain/pb"
 	"micro-service-tmpl/utils/myLog"
 	"net/http"
 )
